@@ -24,6 +24,7 @@ public class User {
     private String email;
     private String phone;
     private String image;
+    private String skillsId;
     @Column(columnDefinition = "TEXT")
     private String description;
     @ManyToMany(mappedBy = "users")

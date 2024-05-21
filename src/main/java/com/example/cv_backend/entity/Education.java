@@ -1,14 +1,14 @@
 package com.example.cv_backend.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
-@Table(name = "educations")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,6 +18,9 @@ public class Education {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String major;
+    private String degree;
+    private String institution;
+    private String fieldOfStudy;
+    private String startDate;
+    private String endDate;
 }

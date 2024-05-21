@@ -2,7 +2,7 @@ package com.example.cv_backend.controller;
 
 import com.example.cv_backend.model.request.CreateUserRequest;
 import com.example.cv_backend.model.request.UpdateUserRequest;
-import com.example.cv_backend.model.request.UserResponse;
+import com.example.cv_backend.model.response.UserResponse;
 import com.example.cv_backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
