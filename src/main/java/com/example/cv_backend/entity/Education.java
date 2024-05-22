@@ -1,15 +1,10 @@
 package com.example.cv_backend.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
 
 @Data
+@Table(name ="educations")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -23,4 +18,7 @@ public class Education {
     private String fieldOfStudy;
     private String startDate;
     private String endDate;
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable=false)
+    private User user;
 }

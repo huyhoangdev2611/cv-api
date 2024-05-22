@@ -35,7 +35,7 @@ public class SkillController {
         return skillService.updateSkill(id, updateSkillRequest);
     }
 
-    @DeleteMapping({"/{id}"})
+    @DeleteMapping({"/{id}"})   
     public void deleteSkill(@PathVariable Long id) {
         skillService.deleteSkill(id);
     }

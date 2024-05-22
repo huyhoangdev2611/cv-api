@@ -24,11 +24,17 @@ public class User {
     private String email;
     private String phone;
     private String image;
-    private String skillsId;
     @Column(columnDefinition = "TEXT")
     private String description;
-    @ManyToMany(mappedBy = "users")
+    @ManyToMany
+    @JoinTable(
+            name = "user_skill",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "skill_id")
+    )
     private List<Skill> skills;
-
-
+    @OneToMany(mappedBy="user")
+    private List<Project> projects;
+    @OneToMany(mappedBy="user")
+    private List<Education> educations;
 }

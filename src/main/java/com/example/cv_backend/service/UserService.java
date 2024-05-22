@@ -23,13 +23,14 @@ public class UserService {
 
     public UserResponse createUser(CreateUserRequest request) {
         List<Skill> skills = skillRepository.findByIdIn(request.getSkillIds());
+
         User user = User.builder()
                 .name(request.getName())
-                .phone(request.getPhone())
                 .birthDay(request.getBirthDay())
-                .description(request.getDescription())
                 .email(request.getEmail())
+                .phone(request.getPhone())
                 .image(request.getImage())
+                .description(request.getDescription())
                 .skills(skills)
                 .build();
 

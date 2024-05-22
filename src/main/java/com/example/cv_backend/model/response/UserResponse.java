@@ -23,7 +23,7 @@ public class UserResponse {
     private String phone;
     private String image;
     private String description;
-    private List<Long> skillsId;
+    private List<String> skillsName;
 
     public static UserResponse fromEntity(User user) {
         return UserResponse.builder()
@@ -34,7 +34,7 @@ public class UserResponse {
                 .phone(user.getPhone())
                 .image(user.getImage())
                 .description(user.getDescription())
-                .skillsId(user.getSkills().stream().map(Skill::getId).collect(Collectors.toList()))
+                .skillsName(user.getSkills().stream().map(Skill::getName).collect(Collectors.toList()))
                 .build();
     }
 }
